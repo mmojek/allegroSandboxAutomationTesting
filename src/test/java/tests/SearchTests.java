@@ -18,12 +18,12 @@ import javax.print.attribute.standard.MediaSize;
 import static org.junit.Assert.assertEquals;
 
 public class SearchTests {
-    private WebDriver driver;
 
+    private WebDriver driver;
     private HomePage homePage;
     private RodoPage rodoPage;
     private NavbarPage navbarPage;
-    private LoginPage loginPage;
+
 
     @BeforeClass
 
@@ -39,33 +39,40 @@ public class SearchTests {
         this.homePage = PageFactory.initElements(this.driver, HomePage.class);
         this.rodoPage = PageFactory.initElements(this.driver, RodoPage.class);
         this.navbarPage = PageFactory.initElements(this.driver, NavbarPage.class);
-        this.loginPage = PageFactory.initElements(this.driver, LoginPage.class);
+
 
     }
 
     @After
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
     }
 
     @Test
     public void inserDataInSearchBarAfterAgreeRodoTerms() {
         homePage.goToHomePage();
         rodoPage.setAcceptTermsButton();
-        navbarPage.setSearchFor("Xiaomi mi 8");
+        navbarPage.setSearchFor("Xiaomi mi8");
 
     }
 
     @Test
-    public void checkIfUserIsOnLogInPage() {
+    public void insertDataInSearchBarAfterUsingXButtonOnRodoTerms() {
         homePage.goToHomePage();
-        rodoPage.setAcceptTermsButton();
-        loginPage.pressMyAllegroButton();
-        loginPage.pressLogInButton();
-        assertEquals()
-
+        rodoPage.getXButtonOnRodoTerms();
+        navbarPage.setSearchFor("Xiaomi mi8");
 
     }
+
+    @Test
+    public void InsertDataInSearchBarAfterUsingDissmissButtonOnRodoTerms() {
+        homePage.goToHomePage();
+        rodoPage.getDismissTermsButton();
+        navbarPage.setSearchFor("Samsung s 8");
+
+    }
+
+
 
 
 }

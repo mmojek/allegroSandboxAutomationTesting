@@ -14,21 +14,48 @@ public class RodoPage {
 
     //wyskakujace okienko Rodo
     @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div")
-    public WebElement rodoWindowOnMainSite;
+    private WebElement rodoWindowOnMainSite;
 
     //pola sluzace do zamkniecia okna Rodo
     @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div/div[2]/div/div[2]/button")
-    public WebElement acceptTermsButton;
+    private WebElement acceptTermsButton;
 
     @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div/button/svg[2]/image")
-    public WebElement cancelRodoWithXButton;
+    private WebElement XButtonOnRodoTerms;
 
     @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div/div[2]/div/div[1]/button")
-    public WebElement dismissTermsButton;
+    private WebElement dismissTermsButton;
+
+    //gettery do pol
+
+
+    public WebElement getRodoWindowOnMainSite() {
+        return rodoWindowOnMainSite;
+    }
+
+    public WebElement getAcceptTermsButton() {
+        return acceptTermsButton;
+    }
+
+    public WebElement getXButtonOnRodoTerms() {
+        return XButtonOnRodoTerms;
+    }
+
+    public WebElement getDismissTermsButton() {
+        return dismissTermsButton;
+    }
 
     //metody sluzace do okienka rodo
     public void setAcceptTermsButton() {
         acceptTermsButton.click();
+    }
+
+    public void setCancelRodoWithXButton() {
+        XButtonOnRodoTerms.click();
+    }
+
+    public void setDismissTermsButton() {
+        dismissTermsButton.click();
     }
 
 }

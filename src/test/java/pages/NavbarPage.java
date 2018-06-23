@@ -12,9 +12,15 @@ public class NavbarPage {
         this.driver = driver;
     }
 
-    @FindBy(className = "metrum_search_query")
+    //zadeklarowane pola
+    @FindBy(xpath = "/html/body/div[3]/div[3]/nav/div[1]/div/div[1]/div/div/form/input[1]")
     private WebElement searchinput;
 
+    public WebElement getSearchinput() {
+        return searchinput;
+    }
+
+    //metody
     public void setSearchFor(String phrase) {
         searchinput.sendKeys(phrase);
         searchinput.submit();
