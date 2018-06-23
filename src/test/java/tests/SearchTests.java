@@ -59,15 +59,15 @@ public class SearchTests {
     @Test
     public void insertDataInSearchBarAfterUsingXButtonOnRodoTerms() {
         homePage.goToHomePage();
-        rodoPage.getXButtonOnRodoTerms();
-        navbarPage.setSearchFor("Xiaomi mi8");
+        rodoPage.setCancelRodoWithXButton();
+        navbarPage.setSearchFor("Iphone X");
 
     }
 
     @Test
     public void InsertDataInSearchBarAfterUsingDissmissButtonOnRodoTerms() {
         homePage.goToHomePage();
-        rodoPage.getDismissTermsButton();
+        rodoPage.setDismissTermsButton();
         navbarPage.setSearchFor("Samsung s 8");
 
     }

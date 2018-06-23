@@ -20,10 +20,10 @@ public class RodoPage {
     @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div/div[2]/div/div[2]/button")
     private WebElement acceptTermsButton;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div/button/svg[2]/image")
+    @FindBy(className = "_12fp2")
     private WebElement XButtonOnRodoTerms;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div/div[2]/div/div[1]/button")
+    @FindBy(className = "_13q9y")
     private WebElement dismissTermsButton;
 
     //gettery do pol
